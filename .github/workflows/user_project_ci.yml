@@ -118,7 +118,7 @@ jobs:
           tar -cf /tmp/${{ env.dep_name }}.tar -C ${{ env.dep_root }} .
 
       - name: Upload Dependencies Tarball
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.dep_name }}-tarball
           path: /tmp/${{ env.dep_name }}.tar
@@ -334,7 +334,7 @@ jobs:
           tar -xf /tmp/precheck.tar -C $PRECHECK_ROOT .
 
       - name: Download Design_${{ matrix.pdk }} Tarball
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: design_${{ matrix.pdk }}-tarball
           path: /tmp
@@ -412,7 +412,7 @@ jobs:
           tar -xf /tmp/timing-scripts.tar -C $TIMING_ROOT .
 
       - name: Download Design_${{ matrix.pdk }} Tarball
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: design_${{ matrix.pdk }}-tarball
           path: /tmp
